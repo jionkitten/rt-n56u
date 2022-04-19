@@ -306,22 +306,6 @@ void restart_ttyd(void){
 }
 #endif
 
-#if defined(APP_ZEROTIER)
-void stop_zerotier(void){
-	eval("/usr/bin/zerotier.sh","stop");
-}
-
-void start_zerotier(void){
-	int zerotier_enable = nvram_get_int("zerotier_enable");
-	if ( zerotier_enable == 1)
-		eval("/usr/bin/zerotier.sh","start");
-}
-
-void restart_zerotier(void){
-	stop_zerotier();
-	start_zerotier();
-}
-#endif
 
 #if defined(APP_SHADOWSOCKS)
 void stop_ss(void){
@@ -668,9 +652,6 @@ stop_services(int stopall)
 #endif
 #if defined(APP_MENTOHUST)
 	stop_mentohust();
-#endif
-#if defined(APP_ZEROTIER)
-	stop_zerotier();
 #endif
 #if defined(APP_TTYD)
 	stop_ttyd();

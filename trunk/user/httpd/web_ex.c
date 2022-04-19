@@ -2045,15 +2045,6 @@ static int rules_count_hook(int eid, webs_t wp, int argc, char **argv)
 
 #endif
 
-#if defined (APP_ZEROTIER)
-static int zerotier_status_hook(int eid, webs_t wp, int argc, char **argv)
-{
-	int zerotier_status_code = pids("zerotier-one");
-	websWrite(wp, "function zerotier_status() { return %d;}\n", zerotier_status_code);
-	return 0;
-}
-#endif
-
 #if defined(APP_DNSFORWARDER)
 static int dnsforwarder_status_hook(int eid, webs_t wp, int argc, char **argv)
 {
