@@ -14,7 +14,7 @@ get_arg_debug(){
 }
 
 get_arg_log(){
-	[ "$(nvram get scutclient_log)" = "1" ] || echo "-o"
+	[ "$(nvram get scutclient_log_enable)" = "1" ] || echo "-o"
 }
 
 get_arg_skip_udp_hb(){

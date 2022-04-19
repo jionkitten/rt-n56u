@@ -119,6 +119,13 @@
 			{0,0,0,0}
 		};
 
+	struct variable variables_ZeroConf_ZeroList[] = {
+			{"zero_enable_x", "24", NULL, FALSE},
+			{"zero_ip_x", "24", NULL, FALSE},
+			{"zero_route_x", "24", NULL, FALSE},
+			{0,0,0,0}
+		};
+
 	struct variable variables_General[] = {
 			{"nvram_manual", "", NULL, FALSE},
 			{"rstats_stored", "", NULL, FALSE},
@@ -785,7 +792,7 @@
 #if defined (APP_SCUT)
 	struct variable variables_ScutclientConf[] = {
 			{"scutclient_enable", "",NULL, EVM_RESTART_SCUT},
-			{"scutclient_log","",NULL,EVM_RESTART_SCUT },
+			{"scutclient_log_enable","",NULL,EVM_RESTART_SCUT },
 			{"scutclient_debug","",NULL,EVM_RESTART_SCUT },
 			{"scutclient_username","",NULL,EVM_RESTART_SCUT },
 			{"scutclient_password","",NULL,EVM_RESTART_SCUT },
@@ -1001,6 +1008,9 @@
 #if defined(APP_SHADOWSOCKS)
 		{"ShadowsocksConf",		variables_ShadowsocksConf},
 #endif
+#if defined(APP_ZEROTIER)
+		{"ZeroConf",		variables_ZeroConf},
+#endif
 		{"LANGUAGE",			variables_Language},
 		{0,0}
 	};
@@ -1083,6 +1093,9 @@
 #if defined(APP_SHADOWSOCKS)
 		{EVM_RESTART_SHADOWSOCKS,	EVT_RESTART_SHADOWSOCKS,	RCN_RESTART_SHADOWSOCKS,  0},
 		{EVM_RESTART_SS_TUNNEL,		EVT_RESTART_SS_TUNNEL,		RCN_RESTART_SS_TUNNEL,	  0},
+#endif
+#if defined(APP_ZEROTIER)
+		{EVM_RESTART_ZEROTIER,		EVT_RESTART_ZEROTIER,		RCN_RESTART_ZEROTIER,	0},
 #endif
 #if defined(APP_SMBD) || defined(APP_NMBD)
 		{EVM_RESTART_NMBD,		EVT_RESTART_NMBD,		RCN_RESTART_NMBD,	0},

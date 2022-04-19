@@ -28,7 +28,7 @@ var $j = jQuery.noConflict();
 
 $j(document).ready(function(){
 	init_itoggle('scutclient_enable');
-        init_itoggle('scutclient_log');
+        init_itoggle('scutclient_log_enable');
 	init_itoggle('scutclient_debug');
 	init_itoggle('scutclient_watchcat');
 	init_itoggle('scutclient_wdg_force');
@@ -203,16 +203,16 @@ function fill_status(status_code){
                                             </td>
                                         </tr>
 
-                                        <tr> <th><#menu5_13_log#></th>
+                                        <tr> <th><#menu5_13_log_enable#></th>
                                             <td>
                                                 <div class="main_itoggle">
                                                     <div id="scutclient_log_on_of">
-                                                        <input type="checkbox" id="scutclient_log_fake" <% nvram_match_x("", "scutclient_log", "1", "value=1 checked"); %><% nvram_match_x("", "scutclient_log", "0", "value=0"); %>>
+                                                        <input type="checkbox" id="scutclient_log_fake" <% nvram_match_x("", "scutclient_log_enable", "1", "value=1 checked"); %><% nvram_match_x("", "scutclient_log_enable", "0", "value=0"); %>>
                                                     </div>
                                                 </div>
                                                 <div style="position: absolute; margin-left: -10000px;">
-                                                    <input type="radio" value="1" name="scutclient_log" id="scutclient_log_1" <% nvram_match_x("", "scutclient_log", "1", "checked"); %>><#checkbox_Yes#>
-                                                    <input type="radio" value="0" name="scutclient_log" id="scutclient_log_0" <% nvram_match_x("", "scutclient_log", "0", "checked"); %>><#checkbox_No#>
+                                                    <input type="radio" value="1" name="scutclient_log_enable" id="scutclient_log_enable_1" <% nvram_match_x("", "scutclient_log_enable", "1", "checked"); %>><#checkbox_Yes#>
+                                                    <input type="radio" value="0" name="scutclient_log_enable" id="scutclient_log_enable_0" <% nvram_match_x("", "scutclient_log_enable", "0", "checked"); %>><#checkbox_No#>
                                                 </div>
                                             </td>
                                         </tr>

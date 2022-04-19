@@ -802,6 +802,7 @@ menu5_13_authip=认证IP:
 menu5_13_hostname=主机名:
 menu5_13_version=Drcom版本号:
 menu5_13_hash=DrAuthSvr.dll哈希值:
+menu5_13_log_enable=启用日志
 menu5_13_debug=启用Debug模式
 menu5_13_watchcat=启用watchcat
 menu5_13_watchcat_force=始终启用watchcat

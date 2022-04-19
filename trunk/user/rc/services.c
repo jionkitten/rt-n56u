@@ -669,6 +669,9 @@ stop_services(int stopall)
 #if defined(APP_MENTOHUST)
 	stop_mentohust();
 #endif
+#if defined(APP_ZEROTIER)
+	stop_zerotier();
+#endif
 #if defined(APP_TTYD)
 	stop_ttyd();
 #endif
