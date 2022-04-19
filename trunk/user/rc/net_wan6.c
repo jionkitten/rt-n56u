@@ -372,7 +372,7 @@ void wan6_up(char *wan_ifname, int unit)
 				doSystem("ip -6 addr add %s dev %s", wan_addr6, wan_ifname);
 			if (*wan_gate6) {
 				doSystem("ip -6 route add %s dev %s", wan_gate6, wan_ifname);
-				doSystem("ip -6 route add default via %s metric %d", wan_gate6, 1);
+				doSystem("ip -6 route add default via %s dev %s metric %d", wan_gate6, wan_ifname, 1);
 			}
 		} else {
 			doSystem("ip -6 route add default dev %s metric %d", wan_ifname, 2048);

@@ -13,6 +13,10 @@ get_arg_debug(){
 	[ "$(nvram get scutclient_debug)" = "1" ] && echo "-D"
 }
 
+get_arg_log(){
+	[ "$(nvram get scutclient_log)" = "1" ] || echo "-o"
+}
+
 get_arg_skip_udp_hb(){
 	[ "$(nvram get scutclient_skip_udp_hb)" = "1" ] && echo "-b"
 }
@@ -30,7 +34,7 @@ func_start(){
 	-s "$(nvram get scutclient_server_auth_ip)" \
 	-c "$(nvram get scutclient_version)" \
 	-h "$(nvram get scutclient_hash)" \
-	"$(get_arg_debug)" "$(get_arg_skip_udp_hb)" \
+	"$(get_arg_debug)" "$(get_arg_log)" "$(get_arg_skip_udp_hb)" \
 	-E "${auth_hook:-"echo 0 > /tmp/scutclient_status"}" \
 	-Q "${fail_hook:-"echo 1 > /tmp/scutclient_status"}"
 

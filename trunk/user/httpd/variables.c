@@ -785,6 +785,7 @@
 #if defined (APP_SCUT)
 	struct variable variables_ScutclientConf[] = {
 			{"scutclient_enable", "",NULL, EVM_RESTART_SCUT},
+			{"scutclient_log","",NULL,EVM_RESTART_SCUT },
 			{"scutclient_debug","",NULL,EVM_RESTART_SCUT },
 			{"scutclient_username","",NULL,EVM_RESTART_SCUT },
 			{"scutclient_password","",NULL,EVM_RESTART_SCUT },
@@ -834,6 +835,21 @@
 			{0,0,0,0}
 	};
 #endif
+
+#if defined(APP_ZEROTIER)
+	struct variable variables_ZeroConf[] = {
+		{"zerotier_enable", "", NULL, EVM_RESTART_ZEROTIER},
+		{"zerotier_id", "", NULL, EVM_RESTART_ZEROTIER},
+		{"zerotier_moonid", "", NULL, EVM_RESTART_ZEROTIER},
+		{"zerotiermoon_enable", "", NULL, EVM_RESTART_ZEROTIER},
+		{"zerotiermoon_ip", "", NULL, EVM_RESTART_ZEROTIER},
+		{"zerotier_nat", "", NULL, EVM_RESTART_ZEROTIER},
+		{"zero_staticnum_x", "", NULL, EVM_RESTART_ZEROTIER},
+		{"ZeroList", "Group", ARGV((char*)variables_ZeroConf_ZeroList, "8", "55", "zero_staticnum_x"), EVM_RESTART_ZEROTIER},
+		{0,0,0,0}
+	};
+#endif
+
 
 #if defined(APP_SHADOWSOCKS)
 	struct variable variables_ShadowsocksConf[] = {

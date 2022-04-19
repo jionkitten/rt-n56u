@@ -496,6 +496,7 @@ struct nvram_pair router_defaults[] = {
 #if defined(APP_SCUT)
 	/* scutclient related */
 	{ "scutclient_enable", "0" },
+	{ "scutclient_log", "1" },
 	{ "scutclient_debug", "0" },
 	{ "scutclient_hostname", "Lenovo-PC" },
 	{ "scutclient_server_auth_ip", "202.38.210.131" },
@@ -552,6 +553,14 @@ struct nvram_pair router_defaults[] = {
 	{ "dns_forwarder_port", "5353" },
 	{ "dns_forwarder_bind", "0.0.0.0" },
 	{ "dns_forwarder_server", "8.8.4.4:53" },
+#endif
+
+#if defined(APP_ZEROTIER)
+	{ "zerotier_enable", "0" },
+	{ "zerotier_id", "" },
+	{ "zerotier_nat", "0" },
+	{ "zerotier_secret", "" },
+	{ "zero_staticnum_x", "0" },
 #endif
 
 #if defined(APP_SHADOWSOCKS)
