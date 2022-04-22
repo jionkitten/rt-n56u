@@ -28,7 +28,6 @@ var $j = jQuery.noConflict();
 
 $j(document).ready(function(){
 	init_itoggle('scutclient_enable');
-        init_itoggle('scutclient_log_enable');
 	init_itoggle('scutclient_debug');
 	init_itoggle('scutclient_watchcat');
 	init_itoggle('scutclient_wdg_force');
@@ -200,20 +199,6 @@ function fill_status(status_code){
                                         <tr> <th width="50%"><#menu5_13_hash#></th>
                                             <td>
                                                 <input type="text" maxlength="64" class="input" size="64" name="scutclient_hash" value="<% nvram_get_x("", "scutclient_hash"); %>">
-                                            </td>
-                                        </tr>
-
-                                        <tr> <th><#menu5_13_log_enable#></th>
-                                            <td>
-                                                <div class="main_itoggle">
-                                                    <div id="scutclient_log_enable_on_of">
-                                                        <input type="checkbox" id="scutclient_log_enable_fake" <% nvram_match_x("", "scutclient_log_enable", "1", "value=1 checked"); %><% nvram_match_x("", "scutclient_log_enable", "0", "value=0"); %>>
-                                                    </div>
-                                                </div>
-                                                <div style="position: absolute; margin-left: -10000px;">
-                                                    <input type="radio" value="1" name="scutclient_log_enable" id="scutclient_log_enable_1" <% nvram_match_x("", "scutclient_log_enable", "1", "checked"); %>><#checkbox_Yes#>
-                                                    <input type="radio" value="0" name="scutclient_log_enable" id="scutclient_log_enable_0" <% nvram_match_x("", "scutclient_log_enable", "0", "checked"); %>><#checkbox_No#>
-                                                </div>
                                             </td>
                                         </tr>
 
