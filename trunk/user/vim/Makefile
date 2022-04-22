@@ -7,7 +7,7 @@ all: download_test config_test
 
 download_test:
 	( if [ ! -d vim ]; then \
-		git clone https://github.com/vim/vim.git
+		git clone https://github.com/vim/vim.git; \
 	fi )
 
 config_test:
