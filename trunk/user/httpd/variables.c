@@ -792,7 +792,6 @@
 #if defined (APP_SCUT)
 	struct variable variables_ScutclientConf[] = {
 			{"scutclient_enable", "",NULL, EVM_RESTART_SCUT},
-			{"scutclient_log_enable","",NULL,EVM_RESTART_SCUT },
 			{"scutclient_debug","",NULL,EVM_RESTART_SCUT },
 			{"scutclient_username","",NULL,EVM_RESTART_SCUT },
 			{"scutclient_password","",NULL,EVM_RESTART_SCUT },
