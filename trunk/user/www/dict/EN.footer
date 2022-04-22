@@ -787,7 +787,6 @@ menu5_13_authip=Auth IP:
 menu5_13_hostname=Host name:
 menu5_13_version=Drcom version:
 menu5_13_hash=DrAuthSvr.dll hash value:
-menu5_13_log_enable=Enable logging
 menu5_13_debug=Enable debug mode
 menu5_13_watchcat=Enable watchcat
 menu5_13_watchcat_force=Always perform watchcat
