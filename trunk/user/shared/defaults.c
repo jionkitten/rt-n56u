@@ -496,7 +496,6 @@ struct nvram_pair router_defaults[] = {
 #if defined(APP_SCUT)
 	/* scutclient related */
 	{ "scutclient_enable", "0" },
-	{ "scutclient_log_enable", "1" },
 	{ "scutclient_debug", "0" },
 	{ "scutclient_hostname", "Lenovo-PC" },
 	{ "scutclient_server_auth_ip", "202.38.210.131" },
