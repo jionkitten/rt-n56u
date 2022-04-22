@@ -1,19 +1,13 @@
-SRC_NAME = vim-8.2
-SRC_URL = http://ftp.vim.org/pub/vim/unix/vim-8.2.tar.bz2
+SRC_NAME = vim
 THISDIR = $(shell pwd)
-LDFLAGS += -L$(STAGEDIR)/lib
+LDFLAGS += -L$(STAGEDIR)/lib -L$(STAGEDIR)/bin -lncurses
 
-all: download_test extract_test config_test
+all: download_test config_test
 	$(MAKE) -j$(HOST_NCPU) -C $(SRC_NAME)
 
 download_test:
-	( if [ ! -f $(SRC_NAME).tar.bz2 ]; then \
-		wget -t5 --timeout=20 --no-check-certificate -O $(SRC_NAME).tar.bz2 $(SRC_URL); \
-	fi )
-
-extract_test:
-	( if [ ! -d vim82 ]; then \
-		tar xf $(SRC_NAME).tar.bz2; \
+	( if [ ! -d vim ]; then \
+		git clone https://github.com/vim/vim.git
 	fi )
 
 config_test:
@@ -24,7 +18,7 @@ config_test:
 	fi )
 
 configure:
-	( cd vim82 ; \
+	( cd vim ; \
 	ac_cv_header_elf_h=no \
 	vim_cv_getcwd_broken=no \
 	vim_cv_memmove_handles_overlap=yes \
