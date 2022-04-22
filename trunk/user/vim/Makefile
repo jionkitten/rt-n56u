@@ -1,6 +1,7 @@
 SRC_NAME = vim-8.2
 SRC_URL = http://ftp.vim.org/pub/vim/unix/vim-8.2.tar.bz2
 THISDIR = $(shell pwd)
+LDFLAGS += -L$(STAGEDIR)/lib
 
 all: download_test extract_test config_test
 	$(MAKE) -j$(HOST_NCPU) -C $(SRC_NAME)
