@@ -35,7 +35,7 @@ configure:
 	vim_cv_tty_mode=0620 \
 	./configure \
 		--prefix=/usr \
-		--with-features=normal \
+		--with-features=tiny \
 		--disable-gui \
 		--disable-gtktest \
 		--disable-xim \
